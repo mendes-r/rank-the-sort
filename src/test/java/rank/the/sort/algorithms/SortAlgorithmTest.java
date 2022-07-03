@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class SortAlgorithmTest {
 
-    static int[] ARRAY_01 = {1, 2, 3};
+    static int[] ARRAY_01 = {3, 2, 1};
     static int[] ARRAY_02 = {1};
     static int[] ARRAY_03 = {};
-    static int[] ARRAY_04 = {3, 2, 1};
+    static int[] ARRAY_04 = {1, 2, 3};
     static int[] ARRAY_05 = {99, 76, 1, 59, 81, 100, 304, 254, 123, 5};
     static int[] ARRAY_06 = {5, 5, 4, 4, 4, 1, 1, 1, 3};
     static int[] ARRAY_07 = {9, 9, 9, 9, 9, 9};
@@ -43,12 +43,21 @@ class SortAlgorithmTest {
     void quickSortTest(int[] array, int[] expected) {
         // arrange
         SortAlgorithm sortAlgorithm = new QuickSort();
-
         // act
-        int [] result = sortAlgorithm.sort(array);
-
+        sortAlgorithm.sort(array);
         // assert
-        assertArrayEquals(expected, result);
+        assertArrayEquals(expected, array);
+    }
+
+    @ParameterizedTest
+    @MethodSource("intArrayProvider")
+    void heapSortTest(int[] array, int[] expected) {
+        // arrange
+        SortAlgorithm sortAlgorithm = new HeapSort();
+        // act
+        sortAlgorithm.sort(array);
+        // assert
+        assertArrayEquals(expected, array);
     }
 
 }
