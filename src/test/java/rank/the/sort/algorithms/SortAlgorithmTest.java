@@ -4,6 +4,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -41,23 +42,28 @@ class SortAlgorithmTest {
     @ParameterizedTest
     @MethodSource("intArrayProvider")
     void quickSortTest(int[] array, int[] expected) {
-        // arrange
-        SortAlgorithm sortAlgorithm = new QuickSort();
-        // act
-        sortAlgorithm.sort(array);
-        // assert
-        assertArrayEquals(expected, array);
+        sortTest(new QuickSort(), array, expected);
     }
 
     @ParameterizedTest
     @MethodSource("intArrayProvider")
     void heapSortTest(int[] array, int[] expected) {
+        sortTest(new HeapSort(), array, expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("intArrayProvider")
+    void mergeSortTest(int[] array, int[] expected) {
+        sortTest(new MergeSort(), array, expected);
+    }
+
+    private void sortTest(SortAlgorithm algorithm, int[] array, int[] expected) {
         // arrange
-        SortAlgorithm sortAlgorithm = new HeapSort();
+        int[] copy = Arrays.copyOf(array, array.length);
         // act
-        sortAlgorithm.sort(array);
+        algorithm.sort(copy);
         // assert
-        assertArrayEquals(expected, array);
+        assertArrayEquals(expected, copy);
     }
 
 }

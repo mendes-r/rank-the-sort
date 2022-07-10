@@ -22,16 +22,16 @@ Some kind of visualization tool could be added to help the understanding of the 
 
 [link](https://www.freecodecamp.org/news/all-you-need-to-know-about-big-o-notation-to-crack-your-next-coding-interview-9d575e7eec4/)
 
-- Quicksort
-- Heapsort
-- Mergesort
-- Timsort
-- Bubble Sort
-- Insertion Sort
-- Selection Sort
-- Tree Sort
-- Shell Sort
-- Bucket Sort
-- Radix Sort
-- Counting Sort
-- Cube Sort
+- [x] Quicksort 
+- [x] Heapsort
+- [ ] Mergesort
+- [ ] Timsort
+- [ ] Bubble Sort
+- [ ] Insertion Sort
+- [ ] Selection Sort
+- [ ] Tree Sort
+- [ ] Shell Sort
+- [ ] Bucket Sort
+- [ ] Radix Sort
+- [ ] Counting Sort
+- [ ] Cube Sort
