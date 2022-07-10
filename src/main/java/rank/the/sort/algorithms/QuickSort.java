@@ -13,9 +13,10 @@ public class QuickSort implements SortAlgorithm {
      * </ul>
      */
     @Override
-    public void sort(int[] array) {
+    public int[] sort(int[] array) {
         int size = array.length;
         quickSort(array, 0, size - 1);
+        return array;
     }
 
     private void quickSort(int[] array, int begin, int end) {

@@ -1,8 +1,6 @@
 package rank.the.sort.algorithms;
 
-import rank.the.sort.utils.Printer;
-
-import java.util.Arrays;
+import rank.the.sort.utils.ArrayUtils;
 
 public class HeapSort implements SortAlgorithm {
 
@@ -17,30 +15,25 @@ public class HeapSort implements SortAlgorithm {
      * </ul>
      */
     @Override
-    public void sort(int[] array) {
-        heapSort(array);
+    public int[] sort(int[] array) {
+        int size = array.length;
+        heapSort(array, size);
+        return array;
     }
 
-    private void heapSort(int[] array) {
-        int size = array.length;
+    private void heapSort(int[] array, int size) {
         while (size > 0) {
             heapefy(array, size);
-            swap(array, 0, size - 1);
+            ArrayUtils.swap(array, 0, size - 1);
             size--;
         }
-    }
-
-    private void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
     }
 
     private void heapefy(int[] heap, int size) {
         for (int i = size - 1; i >= 0; i--) {
             int parent = parent(i);
             if (isInsideBound(size, parent) && isBiggerThanParent(heap[i], heap[parent])) {
-                swap(heap, i, parent);
+                ArrayUtils.swap(heap, i, parent);
             }
         }
     }

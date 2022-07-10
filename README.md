@@ -24,7 +24,7 @@ Some kind of visualization tool could be added to help the understanding of the 
 
 - [x] Quicksort 
 - [x] Heapsort
-- [ ] Mergesort
+- [x] Mergesort
 - [ ] Timsort
 - [ ] Bubble Sort
 - [ ] Insertion Sort

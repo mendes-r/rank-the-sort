@@ -11,10 +11,11 @@ public class SortingTimer implements SortAlgorithm{
     }
 
     @Override
-    public void sort(int[] array) {
+    public int[] sort(int[] array) {
         long start = System.nanoTime();
-        algorithm.sort(array);
+        int[] result = algorithm.sort(array);
         long end = System.nanoTime();
         System.out.println((end - start) / (float) 1000 + "ms");
+        return result;
     }
 }

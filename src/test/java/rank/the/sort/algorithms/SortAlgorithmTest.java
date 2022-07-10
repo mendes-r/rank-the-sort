@@ -61,9 +61,9 @@ class SortAlgorithmTest {
         // arrange
         int[] copy = Arrays.copyOf(array, array.length);
         // act
-        algorithm.sort(copy);
+        int[] result = algorithm.sort(copy);
         // assert
-        assertArrayEquals(expected, copy);
+        assertArrayEquals(expected, result);
     }
 
 }

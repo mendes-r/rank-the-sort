@@ -2,7 +2,7 @@ package rank.the.sort.utils;
 
 import java.util.Random;
 
-public abstract class ArrayGenerator {
+public abstract class ArrayUtils {
 
     public static int[] generate(int size, int min, int max) {
         int[] array = new int[size];
@@ -11,6 +11,12 @@ public abstract class ArrayGenerator {
             array[i] = random.nextInt(max + 1 - min) + min;
         }
         return array;
+    }
+
+    public static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
 }
